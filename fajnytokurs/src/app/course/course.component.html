@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem;">
+  <img src="{{this.course.icon}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">{{this.course.name}}</p>
+    <i (click)="remove()">USUŃ</i>
+    <app-rating [rate]="this.course.rating" (rateUpParent)="rateUpParent()" (rateDownParent)="rateDownParent()"></app-rating>
+  </div>
+</div>
