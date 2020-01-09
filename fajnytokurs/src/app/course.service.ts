@@ -1,27 +1,44 @@
 import { Injectable } from '@angular/core';
 import Course from './models/course.model'
 import SampleCourses from './data/sample-courses'
+import { Subject, Observable, of, BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseService {
-  c = new SampleCourses;
-  getCourses() {
-     return this.c.getSampleCourses(); 
+
+  sc: SampleCourses;
+  c: BehaviorSubject<Array<Course>>;
+  courses = new Array<Course>();
+
+  constructor() {
+    this.sc = new SampleCourses();
+    this.courses = this.sc.getSampleCourses();
+    this.c = new BehaviorSubject<Array<Course>>(this.courses);
   }
 
-  getCourse() {
-
+  getCourses(): Observable<Array<Course>> {
+     return this.c.asObservable();
   }
 
-  addCourse() {
-
+  getCourse(id) {
+    return this.getCourses().pipe(
+      // (+) before `id` turns the string into a number
+      map((cs: Course[]) => cs.find(course => course.id === +id)));
   }
 
-  deleteCourse() {
-
+  addCourse(course: Course) {
+    course.id = this.courses[this.courses.length-1].id + 1;
+    this.courses.push(course);
+    this.c.next(this.courses);
   }
 
-  constructor() { }
+  deleteCourse(cours) {
+    this.courses = this.courses.filter(course => course !== cours);
+    this.c.next(this.courses);
+  }
+
+
 }

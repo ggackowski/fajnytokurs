@@ -1,1 +1,30 @@
-<p>add-course works!</p>
+<form>
+  Nazwa kursu:<br>
+  <input type="text" name="name" placeholder="Nazwa kursu" [(ngModel)]="newCourse.name"> <br>
+  Opis kursu:<br>
+  <textarea name="desc" placeholder="opis" [(ngModel)]="newCourse.desc"></textarea><br>
+  Typ zajęć:<br>
+  <select name="courseType" [(ngModel)]="newCourse.courseType">
+    <option value="lecture">Wykład</option>
+    <option value="lab">Laboratoria</option>
+    <option value="project">Projekt</option>
+    <option value="disc">Ćwiczenia</option>
+  </select><br>
+  Nr semestru: <br>
+  <select name="courseType" [(ngModel)]="newCourse.semester">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+  </select><br>
+  Liczba ECTS: <br>
+  <input type="text" name="ects" placeholder="ETCS" [(ngModel)]="newCourse.ects"> <br>
+  Maksymalna liczba uczestników: <br>
+  <input type="text" name="maxStudents" placeholder="liczba uczestników" [(ngModel)]="newCourse.maxStudents"> <br>
+  Miniaturka: <br>
+  <input type="text" name="icon" placeholder="adres miniaturki" [(ngModel)]="newCourse.icon"><br>
+  <input type="button" name="submit" value="Dodaj kurs" (click)="addCourse($event)">
+</form>

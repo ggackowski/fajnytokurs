@@ -1,27 +1,23 @@
 <div class="container">
-    <p>Filtrtr:</p>
-    <p> Ocena: </p>
-    <input type="checkbox" checked> 1
-    <input type="checkbox" checked> 2
-    <input type="checkbox" checked> 3
-    <input type="checkbox" checked> 4
-    <input type="checkbox" checked> 5
-    <p>Semester: </p>
-    <input type="checkbox" checked> 1
-    <input type="checkbox" checked> 2
-    <input type="checkbox" checked> 3
-    <input type="checkbox" checked> 4
-    <input type="checkbox" checked> 5
-    <input type="checkbox" checked> 6
-    <input type="checkbox" checked> 7
-    <p>ECTS:</p>
-    <input type="checkbox" checked> 1
-    <input type="checkbox" checked> 2
-    <input type="checkbox" checked> 3
-    <input type="checkbox" checked> 4
-    <input type="checkbox" checked> 5
-    <input type="checkbox" checked> 6
-    <p>Nazwa Kursu</p>
-    <input name="nazwa" #text>
-    <button type="button" (click)="search(text.value)">Szukaj!</button>
+   <form class="form">
+    Wyszukiwanie kursów<br>
+    <input class="form-control mr-sm-2" name="search" style="width: 300px;" type="search" placeholder="Szukaj" aria-label="Search" [(ngModel)]="this.data.name" (keypress)="filterName()">
+    Ocena<br>
+        <table>
+            <tr>
+                <td><input type="checkbox" id="rating1" value="1" (click)="addRatingToFilter($event)"  [checked] = "this.checked[0]"></td>
+                <td><input type="checkbox" id="rating2" value="2" (click)="addRatingToFilter($event)"  [checked] = "this.checked[1]"></td>
+                <td><input type="checkbox" id="rating3" value="3" (click)="addRatingToFilter($event)"  [checked] = "this.checked[2]"></td>
+                <td><input type="checkbox" id="rating4" value="4" (click)="addRatingToFilter($event)"  [checked] = "this.checked[3]"></td>
+                <td><input type="checkbox" id="rating5" value="5" (click)="addRatingToFilter($event)"  [checked] = "this.checked[4]"></td>
+            </tr>
+            <tr>
+                <td><label for="rating1">1</label></td>
+                <td><label for="rating2">2</label></td>
+                <td><label for="rating3">3</label></td>
+                <td><label for="rating4">4</label></td>
+                <td><label for="rating5">5</label></td>
+            </tr>
+        </table>
+  </form>
 </div>

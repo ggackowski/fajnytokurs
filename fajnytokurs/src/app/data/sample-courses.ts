@@ -1,7 +1,7 @@
 import Course from '../models/course.model'
 
 export default class SampleCourses {
-  getSampleCourses() {
+  getSampleCourses(): Array<Course> {
     return [
       {
         id: 1,

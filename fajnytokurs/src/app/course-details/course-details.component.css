@@ -1,0 +1,8 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon > img {
+  width: 300px;
+}

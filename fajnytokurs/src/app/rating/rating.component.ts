@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./rating.component.css']
 })
 export class RatingComponent implements OnInit {
-  
+
   @Input()
   rate :number = 0;
   @Output()
@@ -27,6 +27,7 @@ export class RatingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

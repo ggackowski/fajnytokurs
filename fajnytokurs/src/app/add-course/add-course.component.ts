@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import Course from '../models/course.model';
+import { CourseService } from '../course.service';
 
 @Component({
   selector: 'app-add-course',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCourseComponent implements OnInit {
 
-  constructor() { }
+
+  newCourse :Course = new Course;
+
+
+  constructor(private courseService: CourseService ) { }
+
+  addCourse(event) {
+    event.preventDefault;
+    this.courseService.addCourse(this.newCourse);
+  }
 
   ngOnInit() {
   }
+
+
+
+
+
 
 }

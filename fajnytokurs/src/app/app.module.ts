@@ -11,6 +11,40 @@ import { CoursesListComponent } from './courses-list/courses-list.component';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { FilterComponent } from './filter/filter.component';
 import { SearchPipe } from './search-pipe.pipe';
+import { FormsModule } from '@angular/forms';
+import { CourseService } from './course.service';
+import { CourseDetailsComponent } from './course-details/course-details.component'
+import { SearchingService } from './searching.service'
+import { RouterModule, Routes } from '@angular/router';
+import { MainpageComponent } from './mainpage/mainpage.component';
+import { EctsPipe } from './ects.pipe';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+import { AuthGuardService } from './auth-guard.service';
+import { LoginScreenComponent } from './login-screen/login-screen.component';
+import { RegisterScreenComponent } from './register-screen/register-screen.component';
+
+const appRoutes: Routes = [
+  { path: 'course/:id',      component: CourseDetailsComponent },
+  {
+    path: 'courses',
+    component: MainpageComponent,
+    data: { title: 'tytul' }
+  },
+  { path: '',
+    redirectTo: '/courses',
+    pathMatch: 'full'
+  },
+  {
+    path: 'add',
+    component: AddCourseComponent,
+    pathMatch: 'full',
+    canActivate: [AuthGuardService],
+  }
+];
 
 @NgModule({
   declarations: [
@@ -22,13 +56,27 @@ import { SearchPipe } from './search-pipe.pipe';
     CoursesListComponent,
     AddCourseComponent,
     FilterComponent,
-    SearchPipe
+    SearchPipe,
+    CourseDetailsComponent,
+    MainpageComponent,
+    EctsPipe,
+    LoginScreenComponent,
+    RegisterScreenComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule, // do obsługi autentykacji
+    AngularFirestoreModule, // do obslugi baz danych
+    AngularFireDatabaseModule // do obslugi baz danych
   ],
-  providers: [],
+  providers: [CourseService, SearchingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

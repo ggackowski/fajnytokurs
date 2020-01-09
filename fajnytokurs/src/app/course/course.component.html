@@ -1,8 +1,10 @@
-<div class="card" style="width: 18rem;">
+<i (click)="remove()">USUŃ</i>
+<a [routerLink]="['/course', this.course.id]" >
+<div [class]="this.gridFormat()" style="width: 18rem;">
+  <div class="card-header"><p class="card-text">{{this.course.name}}</p></div>
   <img src="{{this.course.icon}}" class="card-img-top" alt="...">
   <div class="card-body">
-    <p class="card-text">{{this.course.name}}</p>
-    <i (click)="remove()">USUŃ</i>
-    <app-rating [rate]="this.course.rating" (rateUpParent)="rateUpParent()" (rateDownParent)="rateDownParent()"></app-rating>
+    <div>Ocena kursu: {{this.course.rating}}</div>
   </div>
 </div>
+</a>

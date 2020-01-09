@@ -11,6 +11,9 @@ export class CourseComponent implements OnInit {
   @Input()
   course :Course
 
+  @Input()
+  isEven :boolean
+
   @Output() 
   removeCourse = new EventEmitter<Course>();
 
@@ -31,6 +34,12 @@ public rateUpParent() {
   }
 public rateDownParent() {
   this.course.rating--;
+}
+
+gridFormat() {
+  if (this.isEven)
+    return "card"
+  return "card bg-light"
 }
 
 }

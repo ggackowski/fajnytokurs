@@ -1,0 +1,31 @@
+<button routerLink="/courses" (click)="resetSearch()">Powrót</button><br><br>
+<div class="container">
+  <div class="header">
+    <h1>{{course.name}}</h1><br>
+    <h2>{{course.desc}}</h2>
+  </div>
+  <div class="flex">
+    <div class="desc">
+      <p>Semestr: {{course.semester}} <br>
+        Rodzaj kursu: {{course.courseType}} <br>
+        Punkty ECTS za kurs: {{course.ects}} <br>
+        Maksymalna liczba studentów: {{course.maxStudents}} <br>
+      </p>
+      <div class="rating">
+        Aktualna ocena: <strong>{{course.rating}}</strong>
+      </div>
+      <app-rating [rate]="this.course.rating" (rateUpParent)="rateUpParent()" (rateDownParent)="rateDownParent()"></app-rating>
+    </div>
+
+    <div class="icon">
+      <img src={{course.icon}}>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
