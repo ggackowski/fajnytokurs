@@ -14,7 +14,14 @@
       <div class="rating">
         Aktualna ocena: <strong>{{course.rating}}</strong>
       </div>
-      <app-rating [rate]="this.course.rating" (rateUpParent)="rateUpParent()" (rateDownParent)="rateDownParent()"></app-rating>
+      <div>
+
+          <button *ngIf="!enrolled()" class="btn btn-primary" (click)="enroll()">Zapisz się na kurs</button>
+      </div>
+
+
+
+      <app-rating *ngIf="enrolled()" [rate]="this.course.rating" (rateUpParent)="rateUpParent($event)" (rateDownParent)="rateDownParent()"></app-rating>
     </div>
 
     <div class="icon">

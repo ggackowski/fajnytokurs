@@ -1,6 +1,6 @@
 export default class Course {
   id: number
-  courseType :string 
+  courseType :string
   ects :number
   semester :number
   maxStudents :number
@@ -8,4 +8,6 @@ export default class Course {
   icon :string
   desc :string
   name :string
+  enrolled: Array<string>
+  rated: Array<string>
 }

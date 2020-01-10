@@ -1,8 +1,13 @@
-<p>Ocena kursu: {{this.rate}}</p>
 <p>
-  Oceń: 
-  <button class="1" (click)=rateUp($event)>up</button>
-  <button class="2" (click)=rateDown($event)>down</button>
-  
+  Oceń:
+
+  <button value="1" (click)=rateit($event)>1</button>
+  <button value="2" (click)=rateit($event)>2</button>
+  <button value="3" (click)=rateit($event)>3</button>
+  <button value="4" (click)=rateit($event)>4</button>
+  <button value="5" (click)=rateit($event)>5</button>
+  <button value="0" (click)="rateit($event)">Usuń ocenę</button>
+
+
 
 </p>

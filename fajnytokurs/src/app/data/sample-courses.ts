@@ -12,7 +12,9 @@ export default class SampleCourses {
         rating: 5,
         icon: 'https://thumbs.dreamstime.com/b/sample-stamp-sample-stamp-sign-icon-editable-vector-illustration-isolated-white-background-123950438.jpg',
         desc: 'lorem ipsum dolor sit amet',
-        name: 'Analiza matematyczna 1'
+        name: 'Analiza matematyczna 1',
+        enrolled: [],
+        rated: []
       },
       {
         id: 2,
@@ -23,7 +25,9 @@ export default class SampleCourses {
         rating: 2,
         icon: 'https://thumbs.dreamstime.com/b/sample-stamp-sample-stamp-sign-icon-editable-vector-illustration-isolated-white-background-123950438.jpg',
         desc: 'lorem ipsum dolor sit amet',
-        name: "Analiza matematyczna 2"
+        name: "Analiza matematyczna 2",
+        enrolled: [],
+        rated: []
       },
       {
         id: 3,
@@ -34,7 +38,9 @@ export default class SampleCourses {
         rating: 1,
         icon: 'https://thumbs.dreamstime.com/b/sample-stamp-sample-stamp-sign-icon-editable-vector-illustration-isolated-white-background-123950438.jpg',
         desc: 'lorem ipsum dolor sit amet',
-        name: 'Algebra'
+        name: 'Algebra',
+        enrolled: [],
+        rated: []
       },
       {
         id: 4,
@@ -45,7 +51,9 @@ export default class SampleCourses {
         rating: 1,
         icon: 'https://thumbs.dreamstime.com/b/sample-stamp-sample-stamp-sign-icon-editable-vector-illustration-isolated-white-background-123950438.jpg',
         desc: 'lorem ipsum dolor sit amet',
-        name: 'Matematyka dyskretna'
+        name: 'Matematyka dyskretna',
+        enrolled: [],
+        rated: []
       },
       {
         id: 5,
@@ -56,7 +64,9 @@ export default class SampleCourses {
         rating: 5,
         icon: 'https://thumbs.dreamstime.com/b/sample-stamp-sample-stamp-sign-icon-editable-vector-illustration-isolated-white-background-123950438.jpg',
         desc: 'lorem ipsum dolor sit amet',
-        name: 'Logika matematyczna'
+        name: 'Logika matematyczna',
+        enrolled: [],
+        rated: []
       },
       {
         id: 6,
@@ -67,7 +77,9 @@ export default class SampleCourses {
         rating: 4,
         icon: 'https://thumbs.dreamstime.com/b/sample-stamp-sample-stamp-sign-icon-editable-vector-illustration-isolated-white-background-123950438.jpg',
         desc: 'lorem ipsum dolor sit amet',
-        name: 'Równania różniczkowe i różnicowe'
+        name: 'Równania różniczkowe i różnicowe',
+        enrolled: [],
+        rated: []
       },
       {
         id: 7,
@@ -78,7 +90,9 @@ export default class SampleCourses {
         rating: 4,
         icon: 'https://thumbs.dreamstime.com/b/sample-stamp-sample-stamp-sign-icon-editable-vector-illustration-isolated-white-background-123950438.jpg',
         desc: 'lorem ipsum dolor sit amet',
-        name: 'Statystyka'
+        name: 'Statystyka',
+        enrolled: [],
+        rated: []
       },
       {
         id: 8,
@@ -89,7 +103,9 @@ export default class SampleCourses {
         rating: 3,
         icon: 'https://thumbs.dreamstime.com/b/sample-stamp-sample-stamp-sign-icon-editable-vector-illustration-isolated-white-background-123950438.jpg',
         desc: 'lorem ipsum dolor sit amet',
-        name: 'Fizyka 1'
+        name: 'Fizyka 1',
+        enrolled: [],
+        rated: []
       },
       {
         id: 9,
@@ -100,7 +116,9 @@ export default class SampleCourses {
         rating: 2,
         icon: 'https://thumbs.dreamstime.com/b/sample-stamp-sample-stamp-sign-icon-editable-vector-illustration-isolated-white-background-123950438.jpg',
         desc: 'lorem ipsum dolor sit amet',
-        name: 'Fizyka 2'
+        name: 'Fizyka 2',
+        enrolled: [],
+        rated: []
       },
       {
         id: 10,
@@ -111,7 +129,9 @@ export default class SampleCourses {
         rating: 2,
         icon: 'https://thumbs.dreamstime.com/b/sample-stamp-sample-stamp-sign-icon-editable-vector-illustration-isolated-white-background-123950438.jpg',
         desc: 'lorem ipsum dolor sit amet',
-        name: 'Podstawy elektroniki'
+        name: 'Podstawy elektroniki',
+        enrolled: [],
+        rated: []
       },
     ]
   }

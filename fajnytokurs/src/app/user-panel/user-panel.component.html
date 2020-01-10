@@ -1,0 +1,7 @@
+<h1>Panel użytkownika {{this.authService.user.email}}</h1>
+<h5 *ngIf="checkIfAdmin() ; else noadmin">
+  Jesteś administratorem!
+</h5>
+<ng-template #noadmin>
+  <button class="btn btn-primary" (click)="makeAdmin()">Zostań administratorem</button>
+</ng-template>

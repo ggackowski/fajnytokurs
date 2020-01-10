@@ -1,1 +1,6 @@
-<p>register-screen works!</p>
+<form>
+  <label for="email">E-mail: </label><input name="email" type="email" [(ngModel)]="email"><br>
+  <label for="password">Hasło: </label><input name="password1" type="password" [(ngModel)]="pass1"><br>
+  <label for="password">Powtórz hasło: </label><input name="password2" type="password" [(ngModel)]="pass2"><br>
+  <button name="submit" (click)="register()">Zarejestruj</button>
+</form>

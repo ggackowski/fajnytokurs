@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import Course from '../models/course.model'
+import {AuthService} from '../auth.service'
+import {environment } from '../../environments/environment'
 
 @Component({
   selector: 'app-course',
@@ -14,11 +16,16 @@ export class CourseComponent implements OnInit {
   @Input()
   isEven :boolean
 
-  @Output() 
+  @Output()
   removeCourse = new EventEmitter<Course>();
 
-  constructor() { 
-    
+  constructor(private authService: AuthService) {
+
+  }
+
+  isAdmin() {
+    if (!this.authService.user) return false;
+    return environment.admins.includes(this.authService.user.uid);
   }
 
   ngOnInit() {

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Fajny to kurs?</a>
+  <a class="navbar-brand" routerLink="/">Fajny to kurs?</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,15 +9,31 @@
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/']">Strona główna <span class="sr-only">(current)</span></a>
       </li>
+      <ng-container *ngIf="this.authService.user">
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/add']">Dodaj kurs <span class="sr-only">(current)</span></a>
       </li>
+      </ng-container>
+      <ng-container *ngIf="!this.authService.user">
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/login']">Zaloguj się<span class="sr-only">(current)</span></a>
       </li>
+      </ng-container>
+      <ng-container *ngIf="!this.authService.user">
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/register']">Zarejestruj się<span class="sr-only">(current)</span></a>
       </li>
+    </ng-container>
+      <ng-container *ngIf="this.authService.user">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']" (click)="logout()">Wyloguj się<span class="sr-only">(current)</span></a>
+        </li>
+      </ng-container>
+      <ng-container *ngIf="this.authService.user">
+        <li class="nav-item">
+        <a class="nav-link" routerLink="/panel">Witaj, {{this.authService.user.email}}</a>
+        </li>
+      </ng-container>
     </ul>
 
   </div>

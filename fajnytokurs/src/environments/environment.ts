@@ -11,7 +11,10 @@ export const environment = {
     projectId: "fajny-to-kurs",
     storageBucket: "fajny-to-kurs.appspot.com",
     messagingSenderId: "431859610312"
-  }
+  },
+  admins: ['oAySKWNuowTsBeSUe6DIPyAFh2r2']
+
+
 };
 
 /*

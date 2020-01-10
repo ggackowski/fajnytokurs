@@ -14,9 +14,12 @@ export class RatingComponent implements OnInit {
   @Output()
   rateDownParent = new EventEmitter<number>();
 
-  rateUp() {
-    console.log("rate up")
-    this.rateUpParent.emit(1);
+  rateit(event) {
+    console.log("rated")
+    let r = event.target.value;
+    console.log(r);
+    this.rateUpParent.emit(r);
+
   }
 
   rateDown() {

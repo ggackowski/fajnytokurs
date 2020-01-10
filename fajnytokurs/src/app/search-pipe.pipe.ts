@@ -10,22 +10,22 @@ export class SearchPipe implements PipeTransform {
      return [];
    if (!data)
      return courses;
-   console.log("a")
+
    if (data.name != undefined) {
-     console.log(data.name);
+
      data.name = data.name.toLowerCase();
      courses = courses.filter(course =>
        course.name.toLowerCase().includes(data.name)
      );
    }
    if (data.ratings != undefined && data.ratings.length > 0) {
-     console.log(data.ratings)
+
      courses = courses.filter(
-       course => data.ratings.find(rat => rat == course.id)
+       course => data.ratings.find(rat => rat == course.rating)
 
     )
    }
-   console.log(data);
+
    return courses;
  }
 }

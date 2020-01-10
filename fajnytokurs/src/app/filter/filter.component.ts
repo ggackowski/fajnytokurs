@@ -19,11 +19,11 @@ export class FilterComponent implements OnInit {
   constructor(private filter: SearchingService) {
     filter.getSearchData().subscribe(d => {
       this.data = d;
-      this.checked[0] = (d.ectses ? d.ratings.filter(e => e === 0).length > 0  : false);
-      this.checked[1] = (d.ectses ? d.ratings.filter(e => e === 1).length > 0  : false);
-      this.checked[2] = (d.ectses ? d.ratings.filter(e => e === 2).length > 0  : false);
-      this.checked[3] = (d.ectses ? d.ratings.filter(e => e === 3).length > 0  : false);
-      this.checked[4] = (d.ectses ? d.ratings.filter(e => e === 4).length > 0  : false);
+      this.checked[0] = (d.ratings ? d.ratings.filter(e => e === 0).length > 0  : false);
+      this.checked[1] = (d.ratings ? d.ratings.filter(e => e === 1).length > 0  : false);
+      this.checked[2] = (d.ratings ? d.ratings.filter(e => e === 2).length > 0  : false);
+      this.checked[3] = (d.ratings ? d.ratings.filter(e => e === 3).length > 0  : false);
+      this.checked[4] = (d.ratings ? d.ratings.filter(e => e === 4).length > 0  : false);
       console.log("subs")
 
     })
@@ -52,9 +52,9 @@ export class FilterComponent implements OnInit {
 
   check(event) {
     console.log("uwagha")
-    console.log(this.data.ectses);
+    console.log(this.data.ratings);
     console.log(event.target.value);
-    if ((this.data.ectses.filter(e => e === event.target.value)).length > 0) {
+    if ((this.data.ratings.filter(e => e === event.target.value)).length > 0) {
       console.log("xd");
       this.checked[event.target.value] = true;
     }

@@ -1,4 +1,4 @@
-<i (click)="remove()">USUŃ</i>
+<i *ngIf="isAdmin()" [routerLink]="['/edit', this.course.id]">EDYTUJ</i>
 <a [routerLink]="['/course', this.course.id]" >
 <div [class]="this.gridFormat()" style="width: 18rem;">
   <div class="card-header"><p class="card-text">{{this.course.name}}</p></div>

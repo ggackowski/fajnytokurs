@@ -17,7 +17,7 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
 import { SearchingService } from './searching.service'
 import { RouterModule, Routes } from '@angular/router';
 import { MainpageComponent } from './mainpage/mainpage.component';
-import { EctsPipe } from './ects.pipe';
+
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -26,6 +26,8 @@ import { environment } from '../environments/environment';
 import { AuthGuardService } from './auth-guard.service';
 import { LoginScreenComponent } from './login-screen/login-screen.component';
 import { RegisterScreenComponent } from './register-screen/register-screen.component';
+import { UserPanelComponent } from './user-panel/user-panel.component';
+import { EditCourseComponent } from './edit-course/edit-course.component';
 
 const appRoutes: Routes = [
   { path: 'course/:id',      component: CourseDetailsComponent },
@@ -34,6 +36,7 @@ const appRoutes: Routes = [
     component: MainpageComponent,
     data: { title: 'tytul' }
   },
+  { path: 'edit/:id',      component: EditCourseComponent },
   { path: '',
     redirectTo: '/courses',
     pathMatch: 'full'
@@ -43,6 +46,18 @@ const appRoutes: Routes = [
     component: AddCourseComponent,
     pathMatch: 'full',
     canActivate: [AuthGuardService],
+  },
+  {
+    path: 'login',
+    component: LoginScreenComponent
+  },
+  {
+    path: 'register',
+    component: RegisterScreenComponent
+  },
+  {
+    path: 'panel',
+    component: UserPanelComponent
   }
 ];
 
@@ -59,9 +74,10 @@ const appRoutes: Routes = [
     SearchPipe,
     CourseDetailsComponent,
     MainpageComponent,
-    EctsPipe,
     LoginScreenComponent,
-    RegisterScreenComponent
+    RegisterScreenComponent,
+    UserPanelComponent,
+    EditCourseComponent
   ],
   imports: [
     BrowserModule,

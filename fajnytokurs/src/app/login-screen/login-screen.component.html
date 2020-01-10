@@ -1,1 +1,5 @@
-<p>login-screen works!</p>
+<form>
+  <label for="email">E-mail: </label><input name="email" type="email" [(ngModel)]="email"><br>
+  <label for="password">Hasło: </label><input name="password" type="password" [(ngModel)]="password"><br>
+  <button name="submit" (click)="login()">Zaloguj</button>
+</form>
