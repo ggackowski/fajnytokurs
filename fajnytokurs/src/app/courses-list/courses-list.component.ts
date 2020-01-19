@@ -35,10 +35,11 @@ export class CoursesListComponent implements OnInit {
   ngOnInit() {
     this.getCourses();
     this.searchingService.getSearchData().subscribe(d => {this.data = d; });
-
+    
 
   }
 
+ 
   public removeCourse(event) {
     this.courseService.deleteCourse(event);
   }

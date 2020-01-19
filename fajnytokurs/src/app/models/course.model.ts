@@ -1,5 +1,5 @@
 export default class Course {
-  id: number
+  id: string
   courseType :string
   ects :number
   semester :number

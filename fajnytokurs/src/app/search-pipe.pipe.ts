@@ -21,7 +21,7 @@ export class SearchPipe implements PipeTransform {
    if (data.ratings != undefined && data.ratings.length > 0) {
 
      courses = courses.filter(
-       course => data.ratings.find(rat => rat == course.rating)
+       course => data.ratings.find(rat => (course.rating >= rat && course.rating < rat + 1))
 
     )
    }

@@ -17,10 +17,10 @@ export class LoginScreenComponent implements OnInit {
    }
 
   login() {
-    // console.log(this.authService)
-    this.authService.login({email: this.email,password: this.password});
-    // console.log(this.authService.user);
-    this.router.navigate(['/']);
+    this.authService.login({email: this.email, password: this.password}).then(u => {
+      if (u) 
+      this.router.navigate(['/']);
+    })
   }
 
   ngOnInit() {

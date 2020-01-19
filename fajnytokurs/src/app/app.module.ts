@@ -85,7 +85,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     ),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule, // do obsługi autentykacji

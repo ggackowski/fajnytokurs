@@ -26,7 +26,7 @@ export class AuthService {
   }
 
   login({email, password}: Credentials) {
-    return this.fireAuth.auth.signInWithEmailAndPassword(email, password);
+    return this.fireAuth.auth.signInWithEmailAndPassword(email, password).catch(e => alert(e));
   }
 
   register({email, password}: Credentials) {

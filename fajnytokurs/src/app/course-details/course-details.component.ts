@@ -21,7 +21,8 @@ export class CourseDetailsComponent implements OnInit {
 
   public rateUpParent(rate) {
 
-    if (this.course.rated.length == 0) {
+    if (this.course.rated.length == 1 && this.course.rated[0] == '') {
+      this.course.rated = [];
       this.course.rating = rate;
       this.course.rated.push(this.uid);
     }
@@ -41,6 +42,7 @@ export class CourseDetailsComponent implements OnInit {
 
       //average = average + ((value - average) / nbValues)
     }
+    this.service.update(this.course);
   }
   public rateDownParent() {
     this.course.rating--;
@@ -55,25 +57,28 @@ export class CourseDetailsComponent implements OnInit {
     private authService: AuthService
   ) {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.service.getCourse(this.id).subscribe(
-      c => {this.course = c;}
-    );
+    this.service.getCourse(this.id).subscribe(crs => {
+      this.course = crs;
+    })
+    //this.course = this.service.getCourse(this.id);
     if (this.authService.user)
       this.uid = this.authService.user.uid;
-    else
+    else  
       this.uid = null;
 
   }
 
   enrolled() {
-    if (this.course.maxStudents - this.course.enrolled.length == 0) return true;
+    //console.log(this.course.maxStudents)
+    if (this.course.maxStudents - this.course.enrolled.length - 1 == 0) return true;
     if (this.authService.user)
       return this.course.enrolled.includes(this.uid);
     else return false
     }
   enroll() {
-
+    
     this.course.enrolled.push(this.uid);
+    this.service.update(this.course);
   }
 
 

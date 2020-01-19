@@ -17,8 +17,8 @@ export class AddCourseComponent implements OnInit {
 
 
   constructor(private courseService: CourseService, private router: Router ) {
-    this.newCourse.enrolled = [];
-    this.newCourse.rated = [];
+    this.newCourse.enrolled = [''];
+    this.newCourse.rated = [''];
     this.newCourse.rating = 0;
   }
 

@@ -22,12 +22,11 @@ export class EditCourseComponent implements OnInit {
 
       this.id = this.route.snapshot.paramMap.get('id');
       console.log(this.id)
+      this.service.getCourse(this.id).subscribe(crs => {this.course = crs});
      }
 
     ngOnChanges() {
-      this.service.getCourse(this.id).subscribe(
-        c => {this.course = c;}
-      );
+      
     }
 
   ngOnInit() {
@@ -35,6 +34,17 @@ export class EditCourseComponent implements OnInit {
 
   resetSearch() {
     this.search.resetSearchData();
+  }
+
+  saveCourse(course) {
+    event.preventDefault();
+    this.service.update(this.course);
+    this.router.navigate(['/']);
+  }
+
+  deleteCourse() {
+    this.service.deleteCourse(this.course);
+    this.router.navigate(['/']);
   }
 
 }

@@ -1,4 +1,5 @@
 <button routerLink="/courses" (click)="resetSearch()">Powrót</button><br><br>
+<h2>Edycja kursu {{course.name}}</h2>
 <form>
   Nazwa kursu:<br>
   <input type="text" name="name" placeholder="Nazwa kursu" [(ngModel)]="course.name"> <br>
@@ -27,7 +28,8 @@
   <input type="text" name="maxStudents" placeholder="liczba uczestników" [(ngModel)]="course.maxStudents"> <br>
   Miniaturka: <br>
   <input type="text" name="icon" placeholder="adres miniaturki" [(ngModel)]="course.icon"><br>
-  <input type="button" name="submit" value="Dodaj kurs" (click)="addCourse($event)">
+  <input type="button" name="submit" value="Zapisz zmiany" (click)="saveCourse($event)">
+  <input type="button" value="Usuń kurs" (click)="deleteCourse($event)">
 </form>
 
 
